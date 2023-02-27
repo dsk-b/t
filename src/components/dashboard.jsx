@@ -4,6 +4,7 @@ import { RenderUser } from "./renderUser";
 
 const Dashboard = () => {
   const { data , setprojectNo } = useContext(MyContext);
+  console.log(data);
   return (
     <div className="flex flex-col justify-between items-center">
       <div className="relative" data-te-dropdown-ref>
@@ -23,7 +24,7 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
-      <RenderUser  />
+      {/* <RenderUser  /> */}
     </div>
   );
 }
