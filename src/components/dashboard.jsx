@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MyContext } from "../App";
 import { RenderUser } from "./renderUser";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
+  const [showbtn, setshowbtn] = useState(false);
   const { data, setprojectNo, projectName, setprojectName } = useContext(MyContext);
   return (
     <div className="h-screen w-screen flex flex-col items-center bg-gradient-to-r from-indigo-50 via-purple-100 to-pink-200">
@@ -26,7 +27,12 @@ const Dashboard = () => {
         </ul>
       </div>
       <div className="grid gap-x-8 gap-y-4 grid-cols-5">
-        <RenderUser />
+        <RenderUser setbtn={setshowbtn} />
+        {
+          showbtn && <button onClick={() => navigate("/sendmail")} className="whitespace-nowrap rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 pt-2.5 pb-2 text-lg font-normal uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none" type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+            SEND MAIL ➪
+          </button>
+        }
       </div>
     </div>
   );

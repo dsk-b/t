@@ -23,7 +23,6 @@ export default function MyModal() {
           Open dialog
         </button>
       </div>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -37,7 +36,6 @@ export default function MyModal() {
           >
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
-
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
@@ -62,7 +60,6 @@ export default function MyModal() {
                       you an email with all of the details of your order.
                     </p>
                   </div>
-
                   <div className="mt-4">
                     <button
                       type="button"

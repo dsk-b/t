@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import Loader from './components/loader';
 import Home from './components/home';
 import UseFetchData from './networkCalls/useFetchData';
+import Sendmail from './components/sendmail';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   BrowserRouter,
-  Link
 } from 'react-router-dom';
 import Dashboard from './components/dashboard';
 export const MyContext = React.createContext();
@@ -33,6 +33,7 @@ function App() {
         <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sendmail" index element={<Sendmail />} />
         </Routes>
       </BrowserRouter>
     </MyContext.Provider> : <Loader />
