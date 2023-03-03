@@ -3,7 +3,6 @@ import { Fragment, useState, useRef } from 'react'
 
 export default function UserCard({ item, cardLength, setbtn }) {
     let [isOpen, setIsOpen] = useState(false);
-    console.log(cardLength);
     // var curr = new Date();
     // var day = curr.getDay() - 1;
     // var firstday = new Date(curr.getTime() - 60 * 60 * 24 * day * 1000);
@@ -13,7 +12,10 @@ export default function UserCard({ item, cardLength, setbtn }) {
     function closeModal() {
         // console.log(textareaRef.current.value);
         // const res = fetch("")
-        setbtn(true);
+        if(textareaRef.current.value != ""){
+            setbtn(true);
+
+        }
         setIsOpen(false);
     }
 
